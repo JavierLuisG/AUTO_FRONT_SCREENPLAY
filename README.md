@@ -61,7 +61,8 @@ Siguiendo una organización limpia y modular:
 src/test
 └── java
     └── com.sofkianos
-        ├── hooks           <-- Acciones personalizadas (ej. Deslizar Óvalo)
+        ├── interactions    <-- Acciones personalizadas (ej. Deslizar Óvalo)
+        ├── hooks           <-- Preparar el escenario (abrir navegador)
         ├── questions       <-- Verificaciones de la UI (Aserciones)
         ├── runners         <-- Ejecutores de Cucumber
         ├── stepdefinitions <-- Mapeo de Gherkin al Actor
