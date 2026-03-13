@@ -5,16 +5,16 @@ import net.serenitybdd.screenplay.targets.Target;
 public class SeccionKudos {
 
     public static final Target BOTON_EXPLORAR_KUDOS = Target.the("boton explorar kudos")
-            .locatedBy("//a[contains(normalize-space(),'Kudos') or contains(normalize-space(),'Explorar')] | //button[contains(normalize-space(),'Kudos') or contains(normalize-space(),'Explorar')]");
+            .locatedBy("//button[contains(.,'Explorar Kudos')]");
 
     public static final Target INPUT_BUSQUEDA = Target.the("input de busqueda")
-            .locatedBy("//input[@type='search' or contains(@placeholder,'Buscar') or contains(@placeholder,'Filtrar') or @name='search']");
+            .locatedBy("//input[@aria-label='Buscar kudos']");
 
     public static final Target BOTON_APLICAR_FILTROS = Target.the("boton aplicar filtros")
-            .locatedBy("//button[contains(normalize-space(),'Aplicar') or contains(normalize-space(),'Buscar') or contains(normalize-space(),'Filtrar')]");
+            .locatedBy("//button[normalize-space()='Aplicar Filtros']");
 
     public static final Target FILAS_KUDOS = Target.the("filas de kudos")
-            .locatedBy("//table//tbody/tr | //section[contains(@class,'kudos')]//article | //div[contains(@class,'kudo-card') or contains(@class,'recognition-card')]");
+            .locatedBy("(//tbody/tr)[1]");
 
     private SeccionKudos() {
     }
