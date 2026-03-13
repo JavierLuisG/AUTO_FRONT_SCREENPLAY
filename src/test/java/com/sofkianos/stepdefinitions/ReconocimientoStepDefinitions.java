@@ -10,6 +10,7 @@ import com.sofkianos.tasks.ExplorarKudos;
 import com.sofkianos.tasks.SeleccionarCategoria;
 import com.sofkianos.tasks.SeleccionarDestinatario;
 import com.sofkianos.tasks.SeleccionarRemitente;
+import com.sofkianos.util.Constantes;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -24,8 +25,6 @@ import org.openqa.selenium.WebDriver;
 
 public class ReconocimientoStepDefinitions {
 
-    private static final String NOMBRE_ACTOR = "Sofkiano";
-
     @Managed(driver = "chrome")
     private WebDriver navegador;
 
@@ -37,7 +36,7 @@ public class ReconocimientoStepDefinitions {
     @Before
     public void prepararEscenario() {
         OnStage.setTheStage(new OnlineCast());
-        OnStage.theActorCalled(NOMBRE_ACTOR).can(BrowseTheWeb.with(navegador));
+        OnStage.theActorCalled(Constantes.NOMBRE_ACTOR).can(BrowseTheWeb.with(navegador));
     }
 
     @Given("que el usuario ingresa a la pagina de generacion de reconocimientos")

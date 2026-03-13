@@ -1,5 +1,6 @@
 package com.sofkianos.questions;
 
+import com.sofkianos.util.Constantes;
 import com.sofkianos.ui.SeccionKudos;
 import java.util.Collection;
 import java.util.Locale;
@@ -46,6 +47,6 @@ public class ValidarKudo implements Question<Boolean> {
     private String normalizar(String texto) {
         return texto == null
                 ? ""
-                : texto.trim().replaceAll("\\s+", " ").toLowerCase(Locale.ROOT);
+                : texto.trim().replaceAll(Constantes.REGEX_ESPACIOS, Constantes.ESPACIO_SIMPLE).toLowerCase(Locale.ROOT);
     }
 }

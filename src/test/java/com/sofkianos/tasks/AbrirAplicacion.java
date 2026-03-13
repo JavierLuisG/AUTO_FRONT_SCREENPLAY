@@ -2,6 +2,7 @@ package com.sofkianos.tasks;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
+import com.sofkianos.util.Constantes;
 import com.sofkianos.ui.PaginaInicio;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
@@ -19,7 +20,7 @@ public class AbrirAplicacion implements Task {
     @Step("abrir la aplicacion de reconocimientos")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Open.url("http://localhost:5173"),
+                Open.url(Constantes.URL),
                 Click.on(PaginaInicio.BOTON_ACCEDER)
         );
     }
