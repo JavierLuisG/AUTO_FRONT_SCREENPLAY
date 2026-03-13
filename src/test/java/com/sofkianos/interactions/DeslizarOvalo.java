@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.targets.Target;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -28,10 +29,17 @@ public class DeslizarOvalo implements Interaction {
     @Override
     @Step("{0} desliza el envio hasta confirmar")
     public <T extends Actor> void performAs(T actor) {
+
         WebDriver navegador = BrowseTheWeb.as(actor).getDriver();
+
         WebElement elementoOvalo = ovalo.resolveFor(actor);
         WebElement elementoContenedor = contenedor.resolveFor(actor);
-        int desplazamientoHorizontal = elementoContenedor.getRect().getWidth() - elementoOvalo.getRect().getWidth();
+
+        int desplazamientoHorizontal = Math.max(
+                elementoContenedor.getRect().getWidth()
+                        - elementoOvalo.getRect().getWidth()
+                        - 8,
+                40);
 
         new Actions(navegador)
                 .clickAndHold(elementoOvalo)
