@@ -77,8 +77,7 @@ public class ReconocimientoStepDefinitions {
     public void exploraLaSeccionDeKudosYVerificaQueElReconocimientoFueCreado() {
         actorEnEscena().attemptsTo(ExplorarKudos.deReconocimientos());
         actorEnEscena().should(
-                seeThat(ValidarKudo.conDatos(remitente, destinatario, categoria, mensaje))
-        );
+                seeThat(ValidarKudo.conDatos(mensaje)));
     }
 
     private Actor actorEnEscena() {
