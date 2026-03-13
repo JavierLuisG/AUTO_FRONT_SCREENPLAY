@@ -1,5 +1,6 @@
 package com.sofkianos.ui;
 
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class FormularioReconocimiento {
@@ -16,12 +17,13 @@ public class FormularioReconocimiento {
     public static final Target CAMPO_MENSAJE = Target.the("campo de mensaje")
             .locatedBy("//textarea[@name='message']");
 
-    public static final Target CONTROL_DESLIZANTE_ENVIO = Target.the("control deslizante de envio")
-            .locatedBy("//span[normalize-space()='Desliza para enviar']");
+    public static final Target CONTROL_DESLIZANTE_ENVIO =
+            Target.the("control deslizante de envio")
+                    .located(By.xpath("//*[@id='root']/div/main/div/div[2]/section/div[3]/div/div[5]/div/div[1]"));
 
-    public static final Target OVALO_ENVIO = Target.the("ovalo de envio")
-            .locatedBy("//div[contains(@class,'bg-brand') and contains(@class,'rounded-full')]");
-
+    public static final Target OVALO_ENVIO =
+            Target.the("ovalo de envio")
+                    .located(By.xpath("//*[@id='root']/div/main/div/div[2]/section/div[3]/div/div[5]/div/div[3]"));
     private FormularioReconocimiento() {
     }
 }
